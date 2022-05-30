@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="lemesh" id="2022-05-29-1">
+        <sql>
+            CREATE TABLE IF NOT EXISTS coffeemaker (
+            id integer primary key,
+            water real,
+            coffee real,
+            status varchar
+            );
+            CREATE SEQUENCE coffee_seq;
+        </sql>
+    </changeSet>
+    <changeSet author="lemesh" id="2022-05-29-2">
+        <sql>
+            INSERT INTO "public"."coffeemaker" ("id", "water", "coffee", "status") VALUES
+            ('1', '0', '0', 'EMPTY');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

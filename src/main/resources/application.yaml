@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/postgres-db
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+        hibernate:
+          ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    open-in-view: false
+  liquibase.change-log: classpath:/db.changelog/db.changelog-master.xml
+  liquibase:
+    enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
